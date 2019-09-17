@@ -57,6 +57,18 @@ class Contacts extends Module
     }
 
     /**
+     * @param $id
+     * @param $data
+     * @param $params
+     * @return Contact\Address
+     */
+    public function createAddress($id, $data, $params)
+    {
+        $data = $this->client->post($this->getUrl() . '/' . $id . '/address', null, $data, $params);
+        return new Contact\Address( $data['address_info'], $this );
+    }
+
+    /**
      * @param string $id
      * @param array $from
      * @param array $to
