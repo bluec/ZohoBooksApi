@@ -16,6 +16,14 @@ class VendorCredits extends Module
     use Commentable, Refundable;
 
     /**
+     * @return string
+     */
+    protected function getResourceKey()
+    {
+        return 'vendor_credits';
+    }
+
+    /**
      * @param $id
      * @param array $data
      * @return bool
