@@ -11,5 +11,8 @@ namespace Webleit\ZohoBooksApi\Models;
  */
 class VendorCredit extends Model
 {
-
+    public function getKeyName()
+    {
+        return 'vendor_credit_id';
+    }
 }
