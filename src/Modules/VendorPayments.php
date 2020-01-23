@@ -34,6 +34,14 @@ class VendorPayments extends Module
     }
 
     /**
+     * @return string
+     */
+    public function getResourceKey()
+    {
+        return 'vendorpayments';
+    }
+
+    /**
      * @param $id
      * @return \Illuminate\Support\Collection
      */
