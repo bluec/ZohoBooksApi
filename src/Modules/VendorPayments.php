@@ -3,7 +3,6 @@
 namespace Webleit\ZohoBooksApi\Modules;
 
 use Webleit\ZohoBooksApi\Client;
-use Webleit\ZohoBooksApi\Models\Model;
 use Webleit\ZohoBooksApi\Modules\VendorPayments\Refunds;
 
 /**
@@ -43,14 +42,4 @@ class VendorPayments extends Module
         $className = $this->getModelClassName() . '\\Refund';
         return $this->getPropertyList('refunds', $id, $className, 'vendorpayment_refunds', $this->refunds);
     }
-
-    /**
-     * The response from Zoho doesn't include any 'vendorpayment' key when creating a Vendor Payment, oh joy!
-     */
-    public function create($data, $params = [])
-    {
-        $data = $this->client->post($this->getUrl(), $data, $params);
-        return $this->make($data);
-    }
-
 }
